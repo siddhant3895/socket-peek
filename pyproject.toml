@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "socket-peek"
+version = "0.1.0"
+description = "Lightweight supply-chain network auditor: runs a command behind a logging proxy and reports every domain it talks to."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["security", "supply-chain", "proxy", "audit", "sbom"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+]
+
+# Deliberately minimal. `rich` covers the report; everything else is stdlib.
+dependencies = [
+    "rich>=13.0",
+]
+
+[project.scripts]
+socket-peek = "socket_peek.cli:main"
+
+[tool.setuptools]
+packages = ["socket_peek"]
+
+[tool.setuptools.package-data]
+socket_peek = ["py.typed"]
