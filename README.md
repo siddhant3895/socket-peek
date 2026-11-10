@@ -1,4 +1,4 @@
-# socket-peek
+# socket-peek --------------
 
 A lightweight, cross-platform supply-chain network auditor. It runs a command
 behind a logging proxy and reports every host that command contacted.
